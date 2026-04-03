@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="亮亮 | 全站工程师 | 个人简历" />
+    <title>亮亮 · 全站工程师 · 简历-01</title>
+    <style>
+      :root{
+        --bg: #fff7e6;
+        --paper: #ffffff;
+        --ink: #121212;
+        --muted: #3a3a3a;
+        --primary: #2f5cff;
+        --accent: #ff3d8e;
+        --highlight: #f7ff00;
+        --border: 3px;
+        --radius: 16px;
+        --shadow: 10px 10px 0 rgba(0,0,0,1);
+        --shadow-sm: 6px 6px 0 rgba(0,0,0,1);
+        --max: 1100px;
+      }
+
+      *{ box-sizing: border-box; }
+      html,body{ height:100%; }
+      body{
+        margin:0;
+        color: var(--ink);
+        background:
+          radial-gradient(900px 500px at 10% 0%, rgba(47,92,255,.20), transparent 55%),
+          radial-gradient(900px 500px at 90% 10%, rgba(255,61,142,.18), transparent 55%),
+          linear-gradient(0deg, var(--bg), var(--bg));
+        font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", Arial, "Noto Sans CJK SC", "Noto Sans", sans-serif;
+      }
+
+      a{ color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+      a:hover{ background: var(--highlight); }
+
+      .wrap{
+        max-width: var(--max);
+        margin: 28px auto 60px;
+        padding: 0 18px;
+      }
+
+      .topbar{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .brand{
+        display:flex;
+        align-items:center;
+        gap: 10px;
+      }
+
+      .stamp{
+        width: 44px;
+        height: 44px;
+        border: var(--border) solid var(--ink);
+        border-radius: 12px;
+        background: var(--highlight);
+        box-shadow: var(--shadow-sm);
+        display:grid;
+        place-items:center;
+        font-weight: 900;
+        letter-spacing: .02em;
+      }
+
+      .brand h1{
+        margin:0;
+        font-size: 18px;
+        line-height: 1.1;
+      }
+      .brand .sub{
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-weight: 650;
+        font-size: 13px;
+      }
+
+      .chips{
+        display:flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+
+      .chip{
+        border: var(--border) solid var(--ink);
+        border-radius: 999px;
+        padding: 8px 12px;
+        background: var(--paper);
+        box-shadow: var(--shadow-sm);
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: .01em;
+        white-space: nowrap;
+      }
+
+      .chip.primary{ background: rgba(47,92,255,.14); }
+      .chip.accent{ background: rgba(255,61,142,.14); }
+
+      .grid{
+        display:grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 18px;
+        align-items:start;
+      }
+
+      @media (max-width: 920px){
+        .grid{ grid-template-columns: 1fr; }
+        .chips{ justify-content: flex-start; }
+      }
+
+      .card{
+        background: var(--paper);
+        border: var(--border) solid var(--ink);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 18px 18px 16px;
+      }
+
+      .card + .card{ margin-top: 18px; }
+
+      .card h2{
+        margin: 0 0 10px;
+        font-size: 16px;
+        letter-spacing: .02em;
+      }
+
+      .kicker{
+        display:inline-flex;
+        align-items:center;
+        gap: 8px;
+        font-weight: 900;
+      }
+
+      .dot{
+        width: 10px;
+        height: 10px;
+        border: var(--border) solid var(--ink);
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 3px 3px 0 rgba(0,0,0,1);
+      }
+
+      .hero{
+        display:flex;
+        gap: 14px;
+        align-items:flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+
+      .headline{
+        flex: 1 1 520px;
+        min-width: 260px;
+      }
+
+      .headline .name{
+        font-size: 40px;
+        line-height: 1.05;
+        margin: 0;
+        letter-spacing: .01em;
+      }
+
+      .headline .role{
+        margin: 8px 0 0;
+        font-weight: 900;
+        display:inline-block;
+        padding: 6px 10px;
+        border: var(--border) solid var(--ink);
+        border-radius: 999px;
+        background: rgba(247,255,0,.75);
+        box-shadow: 6px 6px 0 rgba(0,0,0,1);
+      }
+
+      .mini{
+        flex: 0 0 280px;
+        min-width: 260px;
+        border: var(--border) solid var(--ink);
+        border-radius: var(--radius);
+        padding: 12px 12px 10px;
+        background: rgba(47,92,255,.10);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .mini .row{
+        display:flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 6px 0;
+        border-bottom: 2px dashed rgba(0,0,0,.28);
+      }
+      .mini .row:last-child{ border-bottom: 0; }
+      .mini .k{ color: var(--muted); font-weight: 800; }
+      .mini .v{ font-weight: 900; }
+
+      .lead{
+        margin: 10px 0 0;
+        color: var(--ink);
+        font-weight: 650;
+      }
+
+      .hl{
+        background: linear-gradient(0deg, rgba(255,61,142,.25), rgba(255,61,142,.25));
+        padding: 0 .2em;
+        border-radius: 6px;
+      }
+
+      .list{
+        margin: 0;
+        padding-left: 18px;
+      }
+      .list li{ margin: 6px 0; }
+
+      .meta{
+        display:flex;
+        flex-wrap: wrap;
+        gap: 8px 10px;
+        margin-top: 10px;
+      }
+      .tag{
+        display:inline-flex;
+        align-items:center;
+        gap: 8px;
+        padding: 6px 10px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: #fff;
+        font-weight: 850;
+        font-size: 12px;
+      }
+      .tag b{
+        display:inline-grid;
+        place-items:center;
+        width: 10px;
+        height: 10px;
+        border: 2px solid var(--ink);
+        background: var(--primary);
+      }
+
+      .split{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 520px){
+        .split{ grid-template-columns: 1fr; }
+      }
+
+      .xp{
+        display:grid;
+        gap: 12px;
+      }
+      .xp-item{
+        border: 2px solid var(--ink);
+        border-radius: 14px;
+        padding: 12px 12px 10px;
+        background: rgba(255,247,230,.7);
+      }
+
+      .xp-top{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 6px 10px;
+      }
+      .xp-top .title{
+        font-weight: 950;
+        letter-spacing: .01em;
+      }
+      .xp-top .time{
+        color: var(--muted);
+        font-weight: 850;
+        font-size: 12px;
+      }
+      .xp-top .place{
+        color: var(--muted);
+        font-weight: 800;
+        font-size: 13px;
+        width: 100%;
+      }
+
+      .footer{
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 650;
+      }
+
+      .actions{
+        display:flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .btn{
+        appearance:none;
+        border: var(--border) solid var(--ink);
+        border-radius: 14px;
+        padding: 10px 12px;
+        background: var(--paper);
+        box-shadow: var(--shadow-sm);
+        font-weight: 950;
+        cursor:pointer;
+      }
+      .btn:hover{ background: var(--highlight); }
+      .btn:active{ transform: translate(2px,2px); box-shadow: 4px 4px 0 rgba(0,0,0,1); }
+
+      @media print{
+        body{ background: #fff; }
+        .wrap{ margin: 0; padding: 0; max-width: none; }
+        .card, .stamp, .chip, .mini, .btn{ box-shadow: none !important; }
+        .actions{ display:none !important; }
+        .card{ break-inside: avoid; }
+        a{ text-decoration: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar" role="banner" aria-label="简历顶部信息">
+        <div class="brand">
+          <div class="stamp" aria-hidden="true">LL</div>
+          <div>
+            <h1>亮亮 · 个人简历</h1>
+            <div class="sub">Full‑stack Engineer · Neobrutalism UI</div>
+          </div>
+        </div>
+        <div class="chips" aria-label="亮点标签">
+          <div class="chip primary">全栈 / 前后端一体</div>
+          <div class="chip accent">工程化 / 质量守门</div>
+          <div class="chip">性能 / 可观测</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <main>
+          <section class="card" aria-label="个人概览">
+            <div class="hero">
+              <div class="headline">
+                <p class="name" aria-label="姓名">
+                  小亮亮
+                </p>
+                <div class="role">全站工程师（Full‑stack Engineer）</div>
+                <p class="lead">
+                  专注于把“能用”做成“<span class="hl">可持续迭代</span>”：从产品需求拆解、API 设计、数据库建模，到前端体验与交付自动化。擅长以可观测与工程化为抓手，平衡速度、稳定性与成本。
+                </p>
+                <div class="actions" aria-label="操作按钮">
+                  <button class="btn" type="button" onclick="window.print()">打印 / 导出 PDF</button>
+                  <a class="btn" href="#projects">查看项目</a>
+                  <a class="btn" href="#contact">联系方式</a>
+                </div>
+              </div>
+
+              <aside class="mini" aria-label="基础信息">
+                <div class="row"><div class="k">城市</div><div class="v">上海 / 可远程</div></div>
+                <div class="row"><div class="k">经验</div><div class="v">5+ 年</div></div>
+                <div class="row"><div class="k">方向</div><div class="v">B2B / 内部系统</div></div>
+                <div class="row"><div class="k">到岗</div><div class="v">2 周</div></div>
+              </aside>
+            </div>
+
+            <div class="split" aria-label="关键能力">
+              <div>
+                <h2><span class="kicker"><span class="dot" aria-hidden="true"></span>我擅长做什么</span></h2>
+                <ul class="list">
+                  <li>端到端交付：需求 → 架构 → 开发 → 测试 → 上线 → 监控。</li>
+                  <li>API & 数据建模：REST/GraphQL、鉴权、缓存、异步任务、幂等等。</li>
+                  <li>前端体验：组件化、设计系统、可访问性、性能优化、埋点分析。</li>
+                  <li>工程化：CI/CD、代码规范、分支策略、自动化检查、灰度发布。</li>
+                </ul>
+              </div>
+              <div>
+                <h2><span class="kicker"><span class="dot" aria-hidden="true"></span>技术栈</span></h2>
+                <div class="meta" aria-label="技术标签">
+                  <span class="tag"><b aria-hidden="true"></b>TypeScript / Node.js</span>
+                  <span class="tag"><b aria-hidden="true" style="background: var(--accent)"></b>React / Next.js</span>
+                  <span class="tag"><b aria-hidden="true" style="background: var(--highlight)"></b>CSS / Design System</span>
+                  <span class="tag"><b aria-hidden="true"></b>PostgreSQL / Redis</span>
+                  <span class="tag"><b aria-hidden="true" style="background: var(--accent)"></b>Docker / K8s</span>
+                  <span class="tag"><b aria-hidden="true"></b>Observability (OTel)</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" id="experience" aria-label="工作经历">
+            <h2><span class="kicker"><span class="dot" aria-hidden="true"></span>工作经历</span></h2>
+            <div class="xp">
+              <article class="xp-item">
+                <div class="xp-top">
+                  <div class="title">高级全站工程师 · 交易与风控平台</div>
+                  <div class="time">2023.06 – 至今</div>
+                  <div class="place">某互联网公司 · 平台研发</div>
+                </div>
+                <ul class="list">
+                  <li>主导订单链路重构：将多服务调用收敛为统一网关 + 领域服务，接口稳定性从 99.2% 提升到 99.9%。</li>
+                  <li>构建可观测体系（指标/日志/链路追踪），把核心接口 P95 延迟从 420ms 降到 210ms。</li>
+                  <li>推动前端设计系统落地：组件复用率提升，页面交付周期平均缩短约 30%。</li>
+                </ul>
+              </article>
+
+              <article class="xp-item">
+                <div class="xp-top">
+                  <div class="title">全站工程师 · 企业内部系统</div>
+                  <div class="time">2021.03 – 2023.05</div>
+                  <div class="place">某 SaaS 公司 · 业务中台</div>
+                </div>
+                <ul class="list">
+                  <li>搭建权限模型（RBAC + 数据权限），支撑 10+ 业务线复用；审计追踪满足合规要求。</li>
+                  <li>实现异步任务编排与失败重试，降低人工处理成本；高峰期稳定处理百万级事件。</li>
+                  <li>完善 CI 流水线：单测、类型检查、lint、构建产物签名与发布，减少线上回滚次数。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="card" id="projects" aria-label="代表项目">
+            <h2><span class="kicker"><span class="dot" aria-hidden="true"></span>代表项目</span></h2>
+            <div class="xp">
+              <article class="xp-item">
+                <div class="xp-top">
+                  <div class="title">Neobrutal Dashboard · 数据看板模板</div>
+                  <div class="time">Side Project</div>
+                  <div class="place">Next.js + TS + Postgres</div>
+                </div>
+                <ul class="list">
+                  <li>提供统一的布局、主题、表格与筛选器组件，支持多租户与权限隔离。</li>
+                  <li>接入 OpenTelemetry，默认输出关键业务指标与慢查询告警。</li>
+                  <li>内置导出 PDF/CSV、审计日志与操作回放（事件溯源）能力。</li>
+                </ul>
+              </article>
+
+              <article class="xp-item">
+                <div class="xp-top">
+                  <div class="title">工单系统升级 · SLA & 自动化</div>
+                  <div class="time">公司项目</div>
+                  <div class="place">React + Node.js + Redis Queue</div>
+                </div>
+                <ul class="list">
+                  <li>重做工单流转：状态机 + 规则引擎，支持 SLA 计算、超时升级与自动分派。</li>
+                  <li>将历史“巨石页面”拆为模块化路由与组件，减少回归成本并提升可维护性。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section class="card" id="contact" aria-label="联系方式">
+            <h2><span class="kicker"><span class="dot" aria-hidden="true"></span>联系方式</span></h2>
+            <ul class="list">
+              <li>邮箱：<a href="mailto:liangliang@example.com">liangliang@example.com</a></li>
+              <li>电话：<a href="tel:+8613800000000">+86 138 0000 0000</a></li>
+              <li>GitHub：<a href="https://github.com/" target="_blank" rel="noreferrer">github.com/（占位）</a></li>
+              <li>作品集：<a href="https://example.com" target="_blank" rel="noreferrer">example.com（占位）</a></li>
+            </ul>
+            <div class="footer">提示：把上面的占位链接改成你的真实地址即可。</div>
+          </section>
+
+          <section class="card" aria-label="技能清单">
+            <h2><span class="kicker"><span class="dot" aria-hidden="true"></span>技能清单</span></h2>
+            <div class="xp">
+              <div class="xp-item">
+                <div class="xp-top">
+                  <div class="title">后端</div>
+                  <div class="time">Node.js / API</div>
+                  <div class="place">鉴权、缓存、队列、幂等、限流、灰度</div>
+                </div>
+              </div>
+              <div class="xp-item">
+                <div class="xp-top">
+                  <div class="title">前端</div>
+                  <div class="time">React / Next.js</div>
+                  <div class="place">组件化、性能、A11y、埋点、设计系统</div>
+                </div>
+              </div>
+              <div class="xp-item">
+                <div class="xp-top">
+                  <div class="title">数据与运维</div>
+                  <div class="time">Postgres / Docker</div>
+                  <div class="place">迁移、索引、监控、发布、回滚预案</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" aria-label="教育与证书">
+            <h2><span class="kicker"><span class="dot" aria-hidden="true"></span>教育与证书</span></h2>
+            <ul class="list">
+              <li>本科 · 计算机相关专业（示例）</li>
+              <li>AWS / Kubernetes / 数据库等认证（可选，按需填写）</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
+
